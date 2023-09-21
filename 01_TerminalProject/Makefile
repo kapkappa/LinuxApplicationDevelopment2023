@@ -1,7 +1,7 @@
 all: clean show
 
 show:
-	gcc -g -Wall -Wextra Show.c -lncursesw -o show
+	gcc -g -Wall -Wextra Show.c -lncursesw -o Show
 
 clean::
-	rm -rf show *.o a.out
+	rm -rf Show show *.o a.out
