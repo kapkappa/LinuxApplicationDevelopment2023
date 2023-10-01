@@ -2,3 +2,10 @@
 a.out
 show
 Show
+
+prog
+prog-a
+prog-so
+*.so
+*.a
+file*
