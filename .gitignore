@@ -9,3 +9,4 @@ prog-so
 *.so
 *.a
 file*
+range
