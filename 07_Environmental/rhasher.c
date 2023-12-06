@@ -6,14 +6,18 @@
 #include <stdlib.h>
 #include <errno.h>
 
+#ifdef READLINE
+#include <readline/readline.h>
+#include <readline/history.h>
+#endif
+
 int main() {
     rhash_library_init();
 
-    char digest[64];
-    char output[130];
+    unsigned char digest[128];
+    char output[512];
 
     char* line = NULL;
-    size_t len = 0;
 
     int flag = 0;
     int res = 0;
@@ -22,8 +26,9 @@ int main() {
     int rhash_flag;
 
 #ifdef READLINE
-    while (readline != -1) {
+    while ((line = readline(NULL))) {
 #else
+    size_t len = 0;
     while (getline(&line, &len, stdin) != -1) {
 #endif
         char* algo = strtok(line, " ");
@@ -37,7 +42,7 @@ int main() {
         else
             rhash_flag = RHPR_HEX;
 
-        for (int i = 0; i < strlen(algo); i++)
+        for (size_t i = 0; i < strlen(algo); i++)
             algo[i] = toupper(algo[i]);
 
         if (!strcmp(algo, "SHA1"))
@@ -58,6 +63,8 @@ int main() {
         else
             flag = 1;
 
+        if (msg[strlen(msg)-1] == '\n')
+            msg[strlen(msg)-1] = 0;
 
         if (flag == 0) {
             res = rhash_msg(rhash_algo, msg+1, strlen(msg)-1, digest);
@@ -72,7 +79,7 @@ int main() {
 
         rhash_print_bytes(output, digest, rhash_get_digest_size(rhash_algo), rhash_flag);
 
-        printf("%s (\"%s\") = %s\n", rhash_get_name(rhash_algo), msg, output);
+        printf("%s: %s = %s\n", rhash_get_name(rhash_algo), output, msg);
     }
 
     if (line != NULL)

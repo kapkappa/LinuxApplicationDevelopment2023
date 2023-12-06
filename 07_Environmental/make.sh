@@ -2,9 +2,7 @@
 
 aclocal
 autoheader
-autoconf
-automake
-./configure
+autoreconf -fisv
+automake --add-missing
+./configure --disable-dependency-tracking --enable-readline
 make
-
-make check
