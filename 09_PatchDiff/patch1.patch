@@ -1,0 +1,10 @@
+8a9,13
+>     if (argc != 2) {
+>         printf("Wrong number of arguments. Please enter the size of the maze.\n");
+>         return 1;
+>     }
+> 
+11c16
+<     int size = 6;
+---
+>     int size = atoi(argv[1]);

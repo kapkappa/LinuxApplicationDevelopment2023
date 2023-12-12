@@ -1,0 +1,18 @@
+9,10c9,10
+<     if (argc != 3) {
+<         printf("Wrong number of arguments. Please enter the 'pass-wall' symbols and the size of the maze.\n");
+---
+>     if (argc != 4) {
+>         printf("Wrong number of arguments. Please enter the random seed, the 'pass-wall' symbols and the size of the maze.\n");
+14c14
+<     srand(time(NULL));
+---
+>     srand(atoi(argv[1]));
+16,18c16,18
+<     char pass = argv[1][0];
+<     char wall = argv[1][1];
+<     int size = atoi(argv[2]);
+---
+>     char pass = argv[2][0];
+>     char wall = argv[2][1];
+>     int size = atoi(argv[3]);
