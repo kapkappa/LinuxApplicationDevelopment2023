@@ -1,4 +1,3 @@
-*.o
 a.out
 show
 Show
@@ -12,4 +11,3 @@ file*
 range
 
 *.swp
-*.log
