@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  08_I18n\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-12 05:09+0300\n"
-"PO-Revision-Date: 2023-12-12 05:09+0300\n"
+"POT-Creation-Date: 2023-12-12 19:44+0300\n"
+"PO-Revision-Date: 2023-12-12 19:44+0300\n"
 "Last-Translator: gravitage <gravitage@desktop>\n"
 "Language-Team: Russian <gnu@d07.ru>\n"
 "Language: ru\n"
@@ -18,17 +18,38 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: guess.c:13
+#: guess.c:15
 #, c-format
 msgid "Please, guess a number from 1 to 100.\n"
 msgstr "Пожалуйста, введите число от 1 до 100.\n"
 
-#: guess.c:19
+#: guess.c:21
 #, c-format
 msgid "Does the number more than %d?\n"
-msgstr "Ваше число больше %d?\n"
+msgstr "Число больше чем %d?\n"
 
-#: guess.c:31
+#: guess.c:30
+msgid "yes"
+msgstr "да"
+
+#: guess.c:30
+msgid "y"
+msgstr "д"
+
+#: guess.c:32
+msgid "no"
+msgstr "нет"
+
+#: guess.c:32
+msgid "n"
+msgstr "н"
+
+#: guess.c:35
+#, c-format
+msgid "Bad input! Enter yes or no.\n"
+msgstr "Неправильный ввод! Введите да или нет.\n"
+
+#: guess.c:41
 #, c-format
 msgid "Your number is %d!\n"
-msgstr "ваше число -- %d!\n"
+msgstr "Ваше число -- %d!\n"
