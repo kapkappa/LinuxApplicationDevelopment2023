@@ -10,3 +10,6 @@ prog-so
 *.a
 file*
 range
+
+*.swp
+*.log
