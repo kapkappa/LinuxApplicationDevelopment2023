@@ -11,6 +11,9 @@ AC_CONFIG_HEADERS([config.h])
 # Checks for programs.
 AC_PROG_CC
 
+# Joint pkgconfig library/include check and variable definition.
+PKG_CHECK_MODULES([CHECK],[check])
+
 # Checks for libraries.
 
 # Checks for header files.
