@@ -8,6 +8,11 @@ pkgdata_DATA=ru/LC_MESSAGES/guess.mo
 #guess.mo: ru.po
 #	msgfmt $< -o $@
 
+@DX_RULES@
+
+all-local: doxygen-doc
+
+
 ru/LC_MESSAGES/guess.mo: ru.po
 	mkdir -p `dirname $@`
 	msgfmt $< -o $@
@@ -22,3 +27,6 @@ messages.pot:	guess.pot guess.c
 
 gitclean:
 	git clean -df
+
+http: doxygen-doc
+	python3 -m http.server --directory $</html

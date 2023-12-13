@@ -20,12 +20,21 @@ static char* roman_numbers[100] = {
 
 char str_number[4] = {0};
 
-
+/** Convert integer number into string representation.
+*
+* @param number integer number
+* @return string buffer
+*/
 char* convert_to_str(int number) {
     sprintf(str_number, "%d", number);
     return str_number;
 }
 
+/** Convert integen number into ROMAN string representation.
+*
+* @param number integer number
+* @return string buffer
+*/
 char* convert_to_roman(int number) {
     return roman_numbers[number-1];
 }
