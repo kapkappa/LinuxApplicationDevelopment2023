@@ -4,6 +4,7 @@
 AC_PREREQ([2.71])
 AC_INIT([buf], [0.0.1], [gse])
 AM_INIT_AUTOMAKE([foreign])
+LT_INIT([disable-static])
 AC_CONFIG_SRCDIR([src/buf.c])
 AC_CONFIG_HEADERS([config.h])
 
