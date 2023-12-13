@@ -7,8 +7,5 @@ buf_LDADD = libbuf.la
 
 libbuf.c: buf.h
 
-check: buf
-	@./buf --test
-
 gcov:
 	gcov -o .libs libbuf -t -k -b | egrep -v '[[:digit:]]:[ /][*]'

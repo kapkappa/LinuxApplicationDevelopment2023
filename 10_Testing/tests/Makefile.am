@@ -1,5 +1,5 @@
-TESTS = dummy
-check_PROGRAMS = dummy
+TESTS = dummy upstream
+check_PROGRAMS = dummy upstream
 
 .ts.c:
 	checkmk $< > $@
