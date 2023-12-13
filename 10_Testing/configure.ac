@@ -11,8 +11,15 @@ AC_CONFIG_HEADERS([config.h])
 # Checks for programs.
 AC_PROG_CC
 
-# Joint pkgconfig library/include check and variable definition.
+# Joint pkgconfig library/include tests
 PKG_CHECK_MODULES([CHECK],[check])
+
+
+# Enabe/disable things
+AC_ARG_ENABLE([gcov],
+              [AS_HELP_STRING([--enable-gcov], [use Gcov to test the test suite])],
+              [], [enable_gcov=no])
+AM_CONDITIONAL([COND_GCOV],[test '!' "$enable_gcov" = no])
 
 # Checks for libraries.
 
