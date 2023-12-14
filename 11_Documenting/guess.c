@@ -5,6 +5,13 @@
 #include <ctype.h>
 #include <stdlib.h>
 
+/** @file guess.c
+* Implementation
+*
+* Guesses the hidden number
+*/
+
+
 #define _(STRING) gettext(STRING)
 
 static char* roman_numbers[100] = {
