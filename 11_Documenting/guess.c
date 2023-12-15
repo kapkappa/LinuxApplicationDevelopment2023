@@ -1,6 +1,7 @@
 /** @mainpage
-*   # Dummy programm for guessing the hidden number.
-*
+*   # Programm for guessing the hidden number
+*/
+/** @page Dummy programm for guessing the hidden number.
 *   You need to guess a number between 1 and 100.
 *   The program will ask you if your number more or less then the half of the diapason.
 *   You can answer yes or no (y or n).

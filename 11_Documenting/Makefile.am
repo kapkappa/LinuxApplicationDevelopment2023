@@ -10,7 +10,10 @@ pkgdata_DATA=ru/LC_MESSAGES/guess.mo
 
 @DX_RULES@
 
-all-local: doxygen-doc
+#all-local: doxygen-doc
+doxygen-doc/man/man1/guess.1:	doxygen-doc
+
+man1_MANS = doxygen-doc/man/man1/guess.1
 
 ru/LC_MESSAGES/guess.mo: ru.po
 	mkdir -p `dirname $@`
