@@ -12,7 +12,6 @@ pkgdata_DATA=ru/LC_MESSAGES/guess.mo
 
 all-local: doxygen-doc
 
-
 ru/LC_MESSAGES/guess.mo: ru.po
 	mkdir -p `dirname $@`
 	msgfmt $< -o $@
@@ -30,3 +29,7 @@ gitclean:
 
 http: doxygen-doc
 	python3 -m http.server --directory $</html
+
+install-data-local:
+	mkdir -p $(DESTDIR)/$(docdir)
+	cp -a doxygen-doc/html $(DESTDIR)/$(docdir)

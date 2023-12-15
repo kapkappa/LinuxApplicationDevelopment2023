@@ -1,3 +1,15 @@
+/** @mainpage
+*   # Dummy programm for guessing the hidden number.
+*
+*   You need to guess a number between 1 and 100.
+*   The program will ask you if your number more or less then the half of the diapason.
+*   You can answer yes or no (y or n).
+*
+*   Argument --help will show the helping message
+*   Argument -r will enable Roman number representation
+*
+*/
+
 #include <stdio.h>
 #include <libintl.h>
 #include <locale.h>
@@ -12,8 +24,11 @@
 */
 
 
-#define _(STRING) gettext(STRING)
+#define _(STRING) gettext(STRING)   /**< Translation define */
 
+/**
+*   Table for Roman-Arabic traslation
+*/
 static char* roman_numbers[100] = {
     "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV",
     "XVI", "XVII", "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII",
@@ -25,7 +40,12 @@ static char* roman_numbers[100] = {
     "LXXXIX", "XC", "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"
 };
 
+
+/**
+*   Buffer for integer to string translation
+*/
 char str_number[4] = {0};
+
 
 /** Convert integer number into string representation.
 *
